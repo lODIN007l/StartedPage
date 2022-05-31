@@ -14,7 +14,7 @@ class InputDecorationss {
         labelStyle: TextStyle(color: Colors.grey),
         prefixIcon: iconL != null
             ? Icon(
-                Icons.alternate_email_sharp,
+                Icons.email,
                 color: Colors.deepPurple,
               )
             : null);

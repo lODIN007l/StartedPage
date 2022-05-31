@@ -41,23 +41,44 @@ class _SignUpPageState extends State<SignUpPage> {
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
-                    color: Color.fromARGB(255, 221, 100, 64),
+                    //color: Color.fromARGB(255, 221, 100, 64),
                   ),
-                  child: TextFormField(
-                    obscureText: true,
-                    autocorrect: false,
-                    keyboardType: TextInputType.emailAddress,
-                    //se crea la clase en UI y se hace referencia
-                    decoration: InputDecorationss.logindecoracion(
-                        hintText: '*****',
-                        labelText: 'Contraseña',
-                        iconL: Icons.lock_clock_outlined),
+                  child: _inputForm(
+                    htext: 'jhondoe@gmail.com',
+                    ltext: 'Correo Electronico',
+                    icon: Icons.mark_email_read,
                   ),
                 ),
               ),
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _inputForm extends StatelessWidget {
+  const _inputForm({
+    required this.icon,
+    required this.ltext,
+    required this.htext,
+  });
+  final IconData icon;
+  final String ltext;
+  final String htext;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      obscureText: true,
+      autocorrect: false,
+      keyboardType: TextInputType.emailAddress,
+      //se crea la clase en UI y se hace referencia
+      decoration: InputDecorationss.logindecoracion(
+        hintText: htext,
+        labelText: ltext,
+        iconL: icon,
       ),
     );
   }
